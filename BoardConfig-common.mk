@@ -356,3 +356,6 @@ BOARD_KERNEL_CMDLINE += log_buf_len=1024K
 BOARD_PVMFWIMAGE_PARTITION_SIZE := 0x00100000
 
 -include vendor/google_devices/gs-common/proprietary/BoardConfigVendor.mk
+
+# Verified Boot
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
