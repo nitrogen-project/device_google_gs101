@@ -236,20 +236,12 @@ PRODUCT_VENDOR_PROPERTIES += \
 DEVICE_MANIFEST_FILE := \
 	device/google/gs101/manifest$(LOCAL_64ONLY).xml
 
-ifneq (,$(filter aosp_%,$(TARGET_PRODUCT)))
-DEVICE_MANIFEST_FILE += \
-	device/google/gs101/manifest_media_aosp.xml
-
-PRODUCT_COPY_FILES += \
-	device/google/gs101/media_codecs_aosp_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml
-else
 DEVICE_MANIFEST_FILE += \
 	device/google/gs101/manifest_media.xml
 
 PRODUCT_COPY_FILES += \
 	device/google/gs101/media_codecs_bo_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
 	device/google/gs101/media_codecs_aosp_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_aosp_c2.xml
-endif
 
 DEVICE_MATRIX_FILE := \
 	device/google/gs101/compatibility_matrix.xml
@@ -273,14 +265,8 @@ PRODUCT_COPY_FILES += \
 	device/google/gs101/conf/init.debug.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.debug.rc
 endif
 
-# If AoC Daemon is not present on this build, load firmware at boot via rc
-ifeq ($(wildcard vendor/google/whitechapel/aoc/aocd),)
-PRODUCT_COPY_FILES += \
-	device/google/gs101/conf/init.aoc.nodaemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.aoc.rc
-else
 PRODUCT_COPY_FILES += \
 	device/google/gs101/conf/init.aoc.daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.aoc.rc
-endif
 
 # Recovery files
 PRODUCT_COPY_FILES += \
