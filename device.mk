@@ -72,7 +72,7 @@ PRODUCT_SOONG_NAMESPACES += \
 	vendor/samsung_slsi/telephony/$(BOARD_USES_SHARED_VENDOR_TELEPHONY)
 endif
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifeq ($(RCS_DEBUG),true)
 #Set IKE logs to verbose for WFC
 PRODUCT_PROPERTY_OVERRIDES += log.tag.IKE=VERBOSE
 
@@ -903,9 +903,11 @@ PRODUCT_PACKAGES += ShannonIms
 
 $(call inherit-product-if-exists, vendor/samsung_slsi/telephony/$(BOARD_USES_SHARED_VENDOR_TELEPHONY)/shannon-iwlan/device-vendor.mk)
 
+ifeq ($(RCS_DEBUG),true)
 #RCS Test Messaging App
 PRODUCT_PACKAGES_DEBUG += \
 	TestRcsApp
+endif
 
 PRODUCT_PACKAGES += ShannonRcs
 endif
@@ -1173,7 +1175,9 @@ endif
 include hardware/google/pixel/wifi_ext/device.mk
 
 # Battery Stats Viewer
+ifeq ($(RCS_DEBUG),true)
 PRODUCT_PACKAGES_DEBUG += BatteryStatsViewer
+endif
 
 # Install product specific framework compatibility matrix
 # (TODO: b/169535506) This includes the FCM for system_ext and product partition.
