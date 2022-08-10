@@ -17,5 +17,15 @@
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# Kernel
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
+TARGET_KERNEL_CONFIG := slider_gki_defconfig
+TARGET_KERNEL_SOURCE := kernel/google/gs101/private/gs-google
+TARGET_NEEDS_DTBOIMAGE := true
+
+# Kernel modules
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := device/google/gs101/vendor_dlkm.modules.blocklist
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/google/gs101/private/google-modules
+
 # Verified Boot
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
