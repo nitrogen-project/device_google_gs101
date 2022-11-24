@@ -390,3 +390,6 @@ BOARD_KERNEL_CMDLINE += log_buf_len=1024K
 BOARD_PVMFWIMAGE_PARTITION_SIZE := 0x00100000
 
 -include vendor/google_devices/gs-common/proprietary/BoardConfigVendor.mk
+
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
