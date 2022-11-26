@@ -57,3 +57,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Trigger fsck on upgrade (305658663)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.preventative_fsck = 1
+
+# Telephony
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
