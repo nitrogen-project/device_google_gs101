@@ -43,3 +43,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # ZramWriteback
 -include hardware/google/pixel/mm/device_gki.mk
+
+# Telephony
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
