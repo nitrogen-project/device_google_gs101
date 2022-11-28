@@ -288,4 +288,10 @@
     <bool name="config_Google_apps_can_have_special_access_to_accelerators">true</bool>
 
     <string name="config_gnssPsdsType">broadcom</string>
+
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">false</bool>
+
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">false</bool>
 </resources>
