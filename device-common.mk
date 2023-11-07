@@ -58,6 +58,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.thermal_warmreset = true
 
+# Trigger fsck on upgrade (305658663)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.preventative_fsck = 1
+
 # Telephony
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.dbg.volte_avail_ovr=1 \
